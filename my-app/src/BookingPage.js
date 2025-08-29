@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import BookingForm from "./bookingform";
+import { initializeTimes, updateTimes } from "./srcutils";
 
-const BookingPage = ({ availableTimes, dispatch }) => {
-  const [date, setDate] = useState("");
+const timesReducer = (state, action) => updateTimes(state, action);
+
+// Example booking data array
+const bookingData = [
+  { date: "2025-08-29", time: "18:00", guests: 2, occasion: "Birthday" },
+  { date: "2025-08-30", time: "19:00", guests: 4, occasion: "Anniversary" },
+  // Add more bookings as needed
+];
+
+const BookingPage = () => {
+  const [date, setDate] = useState(""); // or initialize with today's date
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
+  const [availableTimes, dispatch] = useReducer(
+    timesReducer,
+    [],
+    initializeTimes
+  );
 
   const handleSubmit = (formData) => {
-    console.log("Form submitted with the following data:");
-    console.log(formData);
+    // handle successful submission (e.g., show confirmation)
   };
 
   return (
@@ -29,6 +43,7 @@ const BookingPage = ({ availableTimes, dispatch }) => {
           availableTimes={availableTimes}
           dispatch={dispatch}
           onSubmit={handleSubmit}
+          bookingData={bookingData}
         />
         <p aria-live="polite">We look forward to hosting you!</p>
       </>
