@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import BookingForm from "./bookingform";
+import BookingForm from "./BookingForm";
 import { initializeTimes, updateTimes } from "./srcutils";
 
 const timesReducer = (state, action) => updateTimes(state, action);

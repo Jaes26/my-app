@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import BookingForm from "./bookingform";
+import BookingForm from "./BookingForm";
 
 test("renders static labels in the BookingForm", () => {
   render(
