@@ -1,11 +1,7 @@
 function Header() {
   return (
     <header className="App-header">
-      <img
-        src="./little-lemon-logo.png"
-        alt="Little Lemon Logo"
-        className="logo"
-      />
+      <img src="./little-lemon-logo.png" alt="Little Lemon" className="logo" />
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>

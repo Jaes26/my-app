@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders the reservation page heading", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headingElement = screen.getByText(/welcome to our reservation page/i);
+  expect(headingElement).toBeInTheDocument();
+});
+
+test("renders the form labels", () => {
+  render(<App />);
+  expect(screen.getByLabelText(/choose date/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/choose time/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/number of guests/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/occasion/i)).toBeInTheDocument();
 });
