@@ -1,4 +1,4 @@
-import { initializeTimes, updateTimes } from "./App";
+import { initializeTimes, updateTimes } from "./timesReducer";
 
 describe("initializeTimes", () => {
   test("returns the correct initial times", () => {
@@ -18,7 +18,7 @@ describe("initializeTimes", () => {
 describe("updateTimes", () => {
   test("returns the same state when no action is provided", () => {
     const initialState = ["17:00", "18:00", "19:00"];
-    const action = { type: "UNKNOWN_ACTION" }; // No meaningful action
+    const action = { type: "UNKNOWN_ACTION" };
     const result = updateTimes(initialState, action);
     expect(result).toEqual(initialState);
   });
