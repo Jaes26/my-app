@@ -129,7 +129,7 @@ const BookingForm = ({
           <span style={{ color: "red" }}>Please select an occasion.</span>
         )}
 
-        <button type="submit" disabled={!formValid}>
+        <button type="submit" disabled={!formValid} aria-label="On Click">
           Submit
         </button>
       </form>
