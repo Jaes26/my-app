@@ -1,20 +1,21 @@
-function Header() {
-  return (
-    <header className="App-header">
-      <img src="./little-lemon-logo.png" alt="Little Lemon" className="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  );
-}
+import React from "react";
+
+const Header = () => (
+  <header className="header">
+    <section>
+      <div className="banner">
+        <div className="banner-content">
+          <h2>Little Lemon</h2>
+          <h3>Chicago</h3>
+          <p>
+            We are a family owned Mediterranean restaurant, focused on
+            traditional recipes served with a modern twitst.
+          </p>
+          <button>Reserve a Table</button>
+        </div>
+      </div>
+    </section>
+  </header>
+);
 
 export default Header;

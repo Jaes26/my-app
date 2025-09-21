@@ -1,8 +1,6 @@
-/* global fetchAPI */
-// import { fetchAPI } from "./api"; // <-- Remove this line
+import { fetchAPI } from "./api"; // <-- Add this line
 
 export const initializeTimes = () => {
-  // ...existing code...
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -10,8 +8,8 @@ export const initializeTimes = () => {
   const formattedDate = `${yyyy}-${mm}-${dd}`;
   return fetchAPI(formattedDate);
 };
+
 export const updateTimes = (state, action) => {
-  // ...existing code...
   if (action.type === "UPDATE_TIMES") {
     return fetchAPI(action.payload);
   }
