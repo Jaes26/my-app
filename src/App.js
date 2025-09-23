@@ -6,15 +6,14 @@ import Footer from "./footer";
 import Nav from "./nav";
 import BookingPage from "./BookingPage";
 import ConfirmedBooking from "./ConfirmBooking";
-import { fetchAPI } from "./api"; // <-- Add this import
+import Menu from "./menu"; // <-- Add this import
+import { fetchAPI } from "./api";
 
-// Export initializeTimes so it can be imported in the test file
 export const initializeTimes = () => {
   const today = new Date().toISOString().split("T")[0];
-  return fetchAPI(today); // <-- Use fetchAPI to get times for today
+  return fetchAPI(today);
 };
 
-// Reducer function for availableTimes
 export const updateTimes = (state, action) => {
   switch (action.type) {
     case "UPDATE_TIMES":
@@ -49,6 +48,16 @@ function App() {
                 />
               }
             />
+            <Route
+              path="/booking"
+              element={
+                <BookingPage
+                  availableTimes={availableTimes}
+                  dispatch={dispatch}
+                />
+              }
+            />
+            <Route path="/menu" element={<Menu />} /> {/* <-- Add this line */}
             <Route path="/confirmed" element={<ConfirmedBooking />} />
           </Routes>
         </main>

@@ -1,4 +1,3 @@
-/* global fetchAPI, submitAPI */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchAPI, submitAPI } from "./api";
@@ -134,6 +133,7 @@ const BookingForm = ({
         </button>
       </form>
       {/* Add table below the form */}
+
       <h2>Current Bookings</h2>
       <table>
         <thead>
