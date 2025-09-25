@@ -72,6 +72,10 @@ nav ul li a:hover {
   padding: 40px 0;
 }
 
+.header .banner p {
+  font-family: "Garamond", serif; /* Change to your preferred font */
+}
+
 .header section {
   color: #edefee;
   padding: 10px 13%;
@@ -80,11 +84,17 @@ nav ul li a:hover {
 
 h2 {
   color: #f4ce14;
-  font-size: 40px;
+  font-size: 50px;
+}
+.header .banner h2 {
+  font-family: "Brush Script MT", Geneva, Tahoma, sans-serif; /* Or your preferred font */
 }
 
 h3 {
   font-size: 25px;
+}
+.header .banner h3 {
+  font-family: "Georgia", Courier, monospace; /* Or your preferred font */
 }
 
 .banner p {

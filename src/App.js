@@ -6,7 +6,7 @@ import Footer from "./footer";
 import Nav from "./nav";
 import BookingPage from "./BookingPage";
 import ConfirmedBooking from "./ConfirmBooking";
-import Menu from "./menu"; // <-- Add this import
+import Menu from "./menu";
 import { fetchAPI } from "./api";
 
 export const initializeTimes = () => {
@@ -42,10 +42,11 @@ function App() {
             <Route
               path="/"
               element={
-                <BookingPage
-                  availableTimes={availableTimes}
-                  dispatch={dispatch}
-                />
+                // You can add a homepage component here instead of BookingPage
+                <div>
+                  <h1>Welcome to Our Restaurant</h1>
+                  {/* Banner and other homepage content */}
+                </div>
               }
             />
             <Route
@@ -57,7 +58,7 @@ function App() {
                 />
               }
             />
-            <Route path="/menu" element={<Menu />} /> {/* <-- Add this line */}
+            <Route path="/menu" element={<Menu />} />
             <Route path="/confirmed" element={<ConfirmedBooking />} />
           </Routes>
         </main>
